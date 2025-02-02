@@ -1,0 +1,44 @@
+Failure # 1 (occurred at 2025-02-01_16-26-36)
+[36mray::ImplicitFunc.train()[39m (pid=21560, ip=127.0.0.1, actor_id=29fff53f788714228a1602c601000000, repr=train_func)
+  File "python\ray\_raylet.pyx", line 1883, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 1824, in ray._raylet.execute_task.function_executor
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\_private\function_manager.py", line 696, in actor_method_executor
+    return method(__ray_actor, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\util\tracing\tracing_helper.py", line 463, in _resume_span
+    return method(self, *_args, **_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\tune\trainable\trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\air\_internal\util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\tune\trainable\function_trainable.py", line 44, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\util\tracing\tracing_helper.py", line 463, in _resume_span
+    return method(self, *_args, **_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\tune\trainable\function_trainable.py", line 249, in _trainable_func
+    output = fn()
+             ^^^^
+  File "C:\Users\Kone\AppData\Local\Temp\ipykernel_14376\1645959717.py", line 124, in train_func
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\transformers\trainer.py", line 2171, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\transformers\trainer.py", line 2598, in _inner_training_loop
+    self._maybe_log_save_evaluate(
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\transformers\trainer.py", line 3071, in _maybe_log_save_evaluate
+    metrics = self._evaluate(trial, ignore_keys_for_eval)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\transformers\trainer.py", line 3025, in _evaluate
+    metrics = self.evaluate(ignore_keys=ignore_keys_for_eval)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\transformers\trainer.py", line 4073, in evaluate
+    output = eval_loop(
+             ^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\transformers\trainer.py", line 4362, in evaluation_loop
+    metrics = self.compute_metrics(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kone\AppData\Local\Temp\ipykernel_14376\1645959717.py", line 43, in compute_metrics
+NameError: name 'accuracy_score' is not defined

@@ -1,0 +1,8 @@
+{
+  "dropout": 0.17710795343850078,
+  "learning_rate": 0.0002459461804439191,
+  "num_train_epochs": 3,
+  "per_device_eval_batch_size": 32,
+  "per_device_train_batch_size": 32,
+  "warmup_steps": 300
+}

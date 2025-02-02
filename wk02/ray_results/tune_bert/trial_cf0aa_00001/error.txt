@@ -1,0 +1,37 @@
+Failure # 1 (occurred at 2025-01-31_21-31-21)
+[36mray::ImplicitFunc.train()[39m (pid=75696, ip=127.0.0.1, actor_id=6fbcd6397f56a49a7d92572c01000000, repr=train_func)
+  File "python\ray\_raylet.pyx", line 1883, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 1824, in ray._raylet.execute_task.function_executor
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\_private\function_manager.py", line 696, in actor_method_executor
+    return method(__ray_actor, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\util\tracing\tracing_helper.py", line 463, in _resume_span
+    return method(self, *_args, **_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\tune\trainable\trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\air\_internal\util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\tune\trainable\function_trainable.py", line 44, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\util\tracing\tracing_helper.py", line 463, in _resume_span
+    return method(self, *_args, **_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\ray\tune\trainable\function_trainable.py", line 249, in _trainable_func
+    output = fn()
+             ^^^^
+  File "C:\Users\Kone\AppData\Local\Temp\ipykernel_76636\3925252402.py", line 121, in train_func
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\transformers\trainer.py", line 2171, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\transformers\trainer.py", line 2531, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\transformers\trainer.py", line 3675, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Kone\ftllm\yes\Lib\site-packages\transformers\trainer.py", line 3752, in compute_loss
+    raise ValueError(
+ValueError: The model did not return a loss from the inputs, only the following keys: logits. For reference, the inputs it received are input_ids,token_type_ids,attention_mask.
