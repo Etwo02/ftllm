@@ -43,6 +43,12 @@ function SentimentAnalyzer() {
     }
   };
 
+  const clearResults = () => {
+    setResult(null);
+    setText('');
+    setError(null);
+  };
+
   return (
     <div className="analyzer-container">
       <div className="analyzer-card">
@@ -99,6 +105,12 @@ function SentimentAnalyzer() {
                 {(result.confidence * 100).toFixed(1)}%
               </span>
             </div>
+            <button
+              onClick={clearResults}
+              className="clear-button"
+            >
+              Clear Analysis
+            </button>
           </div>
         )}
       </div>
