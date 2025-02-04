@@ -28,18 +28,6 @@ cd sentiment-analysis-system
 pip install -r requirements.txt
 ```
 
-Required packages:
-- transformers
-- torch
-- fastapi
-- uvicorn
-- python-dotenv
-- groq
-- datasets
-- scikit-learn
-- numpy
-- pandas
-
 3. Set up environment variables:
 Create a `.env` file in the project root:
 ```
