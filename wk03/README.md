@@ -125,6 +125,3 @@ print(response.json())
 ### Llama 3 Model
 - Accessed via Groq Cloud API
 - Uses `llama-3.3-70b-versatile` model
-
-## License
-[Your License Here]
